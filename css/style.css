@@ -1,0 +1,35 @@
+.row{
+	width:100%;
+}
+.col-xs-4 {
+	height: 100%;
+}
+.col-xs-4 > div, .col-xs-4 h2{
+	width: 100%;
+	margin: 10px;
+}
+.col-xs-4 .btn-success, .col-xs-4 .btn-info{
+	text-align:left;
+}
+.col-xs-8{
+	background-color:none;
+	height:50%;
+}
+.col-xs-8 div#manage{
+	overflow: overlay;
+}
+#titleInsert{
+	margin: 15px 0;
+}
+#postInsert{
+	height: 50%;
+}
+.btn-lg{
+	margin-left: 8px;
+}
+.btn-primary, .col-xs-8 > div {
+	margin-top: 10px;
+}
+h3.panel-title {
+	line-height: 2;
+}
