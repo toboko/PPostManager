@@ -22,7 +22,7 @@ Next step will be setting the file *common/config.php* and insert:
 **$db_name** = "ourdatabase";
 
 After this, our tool is ready to work. We will have two fields: **Title** and **Post**. When we write a post we will do it
-with markdown language and on live we will see the results on the window, **Preview**.
+with markup language and on live we will see the results on the window, **Preview**.
 
 To **Create** a new post, we must type on title field, on post field and press **Create New Post**.
 
