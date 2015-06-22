@@ -53,7 +53,7 @@
 					<h3 class="panel-title">Manage your posts</h3>
 				</div>
 				<div class="panel-body">
-					<input id="titleInsert" type="text" class="form-control" placeholder="Titolo">
+					<input id="titleInsert" type="text" class="form-control" placeholder="Title">
 					<textarea id="postInsert" class="form-control"  placeholder="Post" onkeyup="parseContent(this.value)"></textarea>
 				</div>
 			</div>
