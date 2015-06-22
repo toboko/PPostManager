@@ -2,7 +2,7 @@
 With PPostManager you can manage a little databse on your personal webpage. If you are not using CMS like Wordpress,
 Joomla or others, you can use this little tool to **create**, **modify** or **delete** your post.
  
-<img style="float:right" src="./img/sidePPost.jpg">
+<img style="float:right!important" src="./img/sidePPost.jpg">
  
 First of all let's think about our DB.
  
@@ -34,4 +34,4 @@ To **Delete** a post select an item from menu **Select Table** and click on the 
 Thanks to [Jquery](https://jquery.com/ "Jquery") for the engine, [Bootstrap](http://getbootstrap.com/ "Bootstrap") for the graphics
 and many thanks to [erusev](https://github.com/erusev "erusev") and his [Parsedown](https://github.com/erusev/parsedown "Parser Markdown").
 
-<img style="display:block;margin-left:auto;margin-right:auto;" src="./img/mainPPost.jpg">
+<img style="display:block!important;margin-left:auto!important;margin-right:auto!important;" src="./img/mainPPost.jpg">
