@@ -2,9 +2,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script src="./js/jquery-2.1.4.min.js"></script>
 	<script src="./js/jfunction.js"></script>
 	
+	<!-- Latest compiled and minified jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- Optional theme -->
