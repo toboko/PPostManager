@@ -2,27 +2,39 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script src="./js/jfunction.js"></script>
-	
+	<link rel="stylesheet" type="text/css" href="./css/dropzone.css">
 	<!-- Latest compiled and minified jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- Zoomwall -->
+	<script type="text/javascript" src="./js/zoomwall.js"></script>
+	<!-- Dropzone - Upload -->
+	<script type="text/javascript" src="./js/dropzone.js"></script>
+	<!-- Ajax function -->
+	<script type="text/javascript" src="./js/jfunction.js"></script>
+	<!-- Effects -->
+	<script type="text/javascript" src="./js/effect.js"></script>
 </head>
-<body onload="postView();tableUpdate();">
+<body onload="tableUpdate()">
 	<div class="row">
 		<!-- Left Column -->
 		<div class="col-xs-4">
 			<!-- Action -->
 			<div class="list-group">
-				<a href="#" class="list-group-item active" onclick="postCreate();">Create New Post</a>
-				<a href="#" class="list-group-item " onclick="postModify();">Modify</a>
-				<a href="#" class="list-group-item " onclick="postRemove();">Delete</a>
+				<a href="#Create" id="postCreate" class="list-group-item active">Create New Post</a>
+				<a href="#Modify" id="postModify" class="list-group-item ">Modify</a>
+				<a href="#Delete" id="postRemove" class="list-group-item ">Delete</a>
 			</div>
+			<!-- Images -->
+			<div class="list-group">
+				<a href="#Image" id="ph_image" class="list-group-item list-group-item-info" data-toggle="modal" data-target=".bs-example-modal-lg">Images</a>
+			</div>	
+			<!-- Upload -->
+			<form action="./php/upload.php" class="dropzone"></form>
+			<!-- Log -->
 			<div id="success"></div>
 			<!-- Old Posts -->
 			<div class="panel panel-default">
@@ -34,7 +46,7 @@
 						<div class="col-md-4">
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Select Table<span class="caret"></span>
+								Select Table <span class="caret"></span>
 								</button>
 								<ul id="tableView" class="dropdown-menu"></ul>
 							</div>
@@ -55,7 +67,11 @@
 				</div>
 				<div class="panel-body">
 					<input id="titleInsert" type="text" class="form-control" placeholder="Title">
-					<textarea id="postInsert" class="form-control"  placeholder="Post" onkeyup="parseContent(this.value)"></textarea>
+					<textarea 
+						id="postInsert" 
+						class="form-control"
+						placeholder="Post"
+						draggable="false"></textarea>
 				</div>
 			</div>
 		</div>
@@ -69,7 +85,12 @@
 			</div>
 		</div>
 	</div>
-</div>
+	<!-- Images Preview -->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-lg">
+			<div id="zoomwall" class="modal-content zoomwall"></div>
+		</div>
+	</div>
 </body>
 </html>
 

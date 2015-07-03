@@ -205,3 +205,23 @@ function tableUpdate() {
     xmlhttp8.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp8.send("req=yes");
 }
+function imageUpdate() {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp9 = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp9 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp9.onreadystatechange = function() {
+        if (xmlhttp9.readyState == 4 && xmlhttp9.status == 200) {
+            document.getElementById("zoomwall").innerHTML = xmlhttp9.responseText;
+        	setTimeout(function(){
+				zoomwall.create(document.getElementById('zoomwall'));
+			},200);
+        }
+    }
+    xmlhttp9.open("POST","./php/imageUpdate.php",true);
+    xmlhttp9.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp9.send("req=yes");
+}

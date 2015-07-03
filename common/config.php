@@ -1,11 +1,5 @@
 <?php
-$site = "site.com";
-$vers = "10";
-$base_url = "";
-$host = "localhost";
-$db_user = "user";
-$db_psw = "password";
-$db_name = "database";
+include_once("setup.php");
 
 $conn = new mysqli($host, $db_user, $db_psw, $db_name);
 if ($conn->connect_error)
