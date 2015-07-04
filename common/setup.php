@@ -7,4 +7,5 @@ $host = "localhost";
 $db_user = "nicola";
 $db_psw = "nicola";
 $db_name = "mydb";
-$upload_url = glob("../img/*.*");
+$path_img = glob("../img/*.*");
+$upload_url = "../img/";

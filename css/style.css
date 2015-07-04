@@ -36,6 +36,17 @@
 h3.panel-title {
 	line-height: 2;
 }
+@media screen and (min-width: 1300px) {
+	#main_view {
+		width: 1280px;
+		margin: auto !important;
+	}
+}
+@media screen and (max-height: 688px) {
+	#manage {
+		height: 346px;
+	}
+}
 
 /*
 The MIT License (MIT)

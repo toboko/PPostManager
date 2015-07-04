@@ -2,7 +2,7 @@
 With PPostManager you can manage a little databse on your personal webpage. If you are not using CMS like Wordpress,
 Joomla or others, you can use this little tool to **create**, **modify** or **delete** your post.
  
-<img style="float:right!important" src="./img/sidePPost.jpg">
+<img style="float:right!important" src="./img/sidePPost.png">
  
 First of all let's think about our DB.
  
@@ -21,7 +21,9 @@ Next step will be setting the file *common/setup.php* and insert:
 
 **$db_name** = "ourdatabase";
 
-**$upload_url** = glob("../path/to/upload/*.*");
+**$path_img** = glob("../path/for/images/*.*");
+
+**$upload_url** = "../path/to/upload/";
 
 After this, our tool is ready to work. We will have two fields: **Title** and **Post**. When we write a post we will do it
 with markup language and on live we will see the results on the window, **Preview**.
@@ -38,8 +40,10 @@ and you could change the previous strings. When you will finish press **Modify**
 select an item from menu **Select Table** and click on the post to delete, than press **Delete**.
 
 ###Upload
-images in your favourite path, modifying the setup.php
+drag and drop your images in the **Upload Window** or press on it for multiple upload
 
+###Insert Images
+select **Images** to view the content of your default path then the images. You can drag you favourite image and drop inside the post field
 #Thanks to
 + [Jquery](https://jquery.com/ "Jquery") for the engine
 + [Bootstrap](http://getbootstrap.com/ "Bootstrap") for the graphics

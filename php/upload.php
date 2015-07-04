@@ -1,7 +1,6 @@
 <?php
+include("../common/setup.php");
 $ds          = DIRECTORY_SEPARATOR;  //1
- 
-$storeFolder = '../img/';   //2
  
 if (!empty($_FILES)) {
      

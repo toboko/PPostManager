@@ -1,8 +1,8 @@
 <?php
 include("../common/setup.php");
 
-for ($i=0; $i<count($upload_url); $i++) {
-	$image = $upload_url[$i];
+for ($i=0; $i<count($path_img); $i++) {
+	$image = $path_img[$i];
 	$image = substr($image, 1);
 	echo '
 		<img 

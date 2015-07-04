@@ -22,6 +22,9 @@ $(function(){
 	$("#postCreate").click(function(){
 		postCreate();
 	});
+	$("body").ready(function() {
+		tableUpdate();
+	});
 });
 //Tab option for #postInsert
 $(document).delegate('#postInsert', 'keydown', function(e) { 

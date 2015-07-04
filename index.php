@@ -18,8 +18,8 @@
 	<!-- Effects -->
 	<script type="text/javascript" src="./js/effect.js"></script>
 </head>
-<body onload="tableUpdate()">
-	<div class="row">
+<body>
+	<div id="main_view" class="row">
 		<!-- Left Column -->
 		<div class="col-xs-4">
 			<!-- Action -->
