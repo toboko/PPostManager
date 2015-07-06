@@ -1,4 +1,4 @@
-#PPostManager [by Nicola Bombaci](http://nicolabombaci.com/ "Nicola Bombaci Webpage")
+#PPostManager [Nicola Bombaci](http://nicolabombaci.com/ "Nicola Bombaci Webpage")
 With PPostManager you can manage a little databse on your personal webpage. If you are not using CMS like Wordpress,
 Joomla or others, you can use this little tool to **create**, **modify** or **delete** your post.
  
@@ -38,6 +38,9 @@ and you could change the previous strings. When you will finish press **Modify**
 
 ###Delete
 select an item from menu **Select Table** and click on the post to delete, than press **Delete**.
+
+###Search
+type the title of the post you are looking for in the **Search Bar**
 
 ###Upload
 drag and drop your images in the **Upload Window** or press on it for multiple upload
