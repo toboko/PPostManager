@@ -30,7 +30,7 @@ if ($tab != "") {
 			}
 		}
 	}
-	$conn->close();
 }
+$conn->close();
 echo $string;
 ?>
