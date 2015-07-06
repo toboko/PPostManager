@@ -225,3 +225,20 @@ function imageUpdate() {
     xmlhttp9.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp9.send("req=yes");
 }
+function titleSearch(title) {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp10 = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp10 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp10.onreadystatechange = function() {
+        if (xmlhttp10.readyState == 4 && xmlhttp10.status == 200) {
+            document.getElementById("postView").innerHTML = xmlhttp10.responseText;
+        }
+    }
+    xmlhttp10.open("POST","./php/titleSearch.php",true);
+    xmlhttp10.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp10.send("table=" + tab_name + "&title=" + title);
+}

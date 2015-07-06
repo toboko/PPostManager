@@ -53,7 +53,13 @@
 						</div>
 					</div>
 				</div>
+				<!-- Post Updated -->
 				<div class="panel-body">
+				<!-- Search -->
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">Search</span>
+						<input id="searchTitle" type="text" class="form-control" placeholder="Title" aria-describedby="sizing-addon2">
+					</div>
 					<div id="postView" class="list-group"></div>
 				</div>
 			</div>

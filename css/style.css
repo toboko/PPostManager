@@ -33,6 +33,9 @@
 .btn-primary, .col-xs-8 > div {
 	margin-top: 10px;
 }
+.input-group {
+	margin: 10px 0;
+}
 h3.panel-title {
 	line-height: 2;
 }
@@ -47,7 +50,16 @@ h3.panel-title {
 		height: 346px;
 	}
 }
-
+@media screen and (min-width: 992px) {
+	.col-md-8 {
+		width: 60.66% !important;
+	}
+}
+@media screen and (max-width: 700px) {
+	span#sizing-addon2 {
+		display: none !important;
+	}
+}
 /*
 The MIT License (MIT)
 

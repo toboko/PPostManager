@@ -10,6 +10,9 @@ $(function(){
 	$("#postInsert").bind('input propertychange',function(){
 		parseContent($(this).val());
 	});
+	$("#searchTitle").bind('input propertychange',function(){
+		titleSearch($(this).val());
+	});
 	$("#ph_image").click(function(){
 		imageUpdate();
 	});
