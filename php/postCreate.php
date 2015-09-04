@@ -9,7 +9,7 @@
 	$post = $_POST['post'];
 	$post = escape_ch($post);
 	
-	$date= date("Y-m-d");
+	$date= date("Y-m-d H:i:s");
 	
 	if ($conn->query("INSERT INTO $tab (id, title, post, date) VALUES (NULL, '$title', '$post', '$date')") === TRUE) {
 	    echo "<div class='alert alert-success' role='alert'>New record created successfully</div>";
