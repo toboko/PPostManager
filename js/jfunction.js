@@ -4,7 +4,7 @@ var tab_name = "";
 function parseContent(str) {
 	    if (str == "") {
 	        document.getElementById("postShow").innerHTML = "";
-	    } else { 
+	    } else {
 	        if (window.XMLHttpRequest) {
 	            // code for IE7+, Firefox, Chrome, Opera, Safari
 	            xmlhttp1 = new XMLHttpRequest();
@@ -26,7 +26,7 @@ function titleUpdate(id) {
     if (id == "") {
         document.getElementById("titleInsert").innerHTML = "";
         return;
-    } else { 
+    } else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp2 = new XMLHttpRequest();
@@ -48,7 +48,7 @@ function titleUpdate(id) {
 function postUpdate(id) {
     if (id == "") {
         document.getElementById("postInsert").innerHTML = "";
-    } else { 
+    } else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp3 = new XMLHttpRequest();
@@ -89,13 +89,13 @@ function postModify() {
     var id 		= $("#idPost").val()
     var title 	= $("#titleInsert").val();
     var post	= $("#postInsert").val();
-    
+
     if (id == "" || title == "" || post == "") {
         document.getElementById("success").innerHTML = "" +
         		"<div class='alert alert-danger' role='alert'>" +
         		"<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" +
         		"Input not found</div>";
-    } else { 
+    } else {
 	    if (window.XMLHttpRequest) {
 	        // code for IE7+, Firefox, Chrome, Opera, Safari
 	        xmlhttp5 = new XMLHttpRequest();
@@ -108,7 +108,7 @@ function postModify() {
 	            document.getElementById("success").innerHTML = xmlhttp5.responseText;
 	            return postView();
 	        }
-	    }	    
+	    }
 	    xmlhttp5.open("POST","./php/postModify.php",true);
 	    xmlhttp5.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	    xmlhttp5.send("id="+ id + "&title="+ title + "&post="+ post + "&table=" + tab_name);
@@ -117,13 +117,19 @@ function postModify() {
 function postCreate() {
     var title 	= $("#titleInsert").val();
     var post	= $("#postInsert").val();
-    
-    if (title == "" || post == "") {
-        document.getElementById("success").innerHTML = "" +
-        		"<div class='alert alert-danger' role='alert'>" +
-        		"<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" +
-        		"Input not found</div>";
-    } else { 
+		var err_msg;
+
+    if (title == "" || post == "" || tab_name == "") {
+        err_msg =	"<div class='alert alert-danger' role='alert'>" +
+			        		"<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>";
+				if (title == "") err_msg = err_msg + " <b>Title</b>";
+				if (post == "") err_msg = err_msg + " <b>Post</b>";
+				if (tab_name == "") err_msg = err_msg + " <b>Table</b>";
+				err_msg = err_msg + " empty</div>";
+
+				document.getElementById("success").innerHTML = err_msg;
+
+    } else {
 	    if (window.XMLHttpRequest) {
 	        // code for IE7+, Firefox, Chrome, Opera, Safari
 	        xmlhttp6 = new XMLHttpRequest();
@@ -136,7 +142,7 @@ function postCreate() {
 	            document.getElementById("success").innerHTML = xmlhttp6.responseText;
 	            return postView();
 	        }
-	    }	    
+	    }
 	    xmlhttp6.open("POST","./php/postCreate.php",true);
 	    xmlhttp6.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	    xmlhttp6.send("title="+ title + "&post="+ post + "&table=" + tab_name);
@@ -144,13 +150,13 @@ function postCreate() {
 }
 function postRemove() {
     var id 	= $("#idPost").val()
-    
+
     if (id == "") {
         document.getElementById("success").innerHTML = "" +
         		"<div class='alert alert-danger' role='alert'>" +
         		"<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" +
         		"Input not found</div>";
-    } else { 
+    } else {
 	    if (window.XMLHttpRequest) {
 	        // code for IE7+, Firefox, Chrome, Opera, Safari
 	        xmlhttp7 = new XMLHttpRequest();
@@ -163,19 +169,19 @@ function postRemove() {
 	            document.getElementById("success").innerHTML = xmlhttp7.responseText;
 	            return postView();
 	        }
-	    }	    
+	    }
 	    xmlhttp7.open("POST","./php/postRemove.php",true);
 	    xmlhttp7.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	    xmlhttp7.send("id="+ id + "&table=" + tab_name);
     }
 }
-function tableChange(table) {    
+function tableChange(table) {
     if (table== "") {
         document.getElementById("success").innerHTML = "" +
         		"<div class='alert alert-danger' role='alert'>" +
         		"<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>" +
         		"Table not found</div>";
-    } else { 
+    } else {
     	tab_name = table;
     	document.getElementById("success").innerHTML = "" +
     			"<div class='alert alert-success' role='alert'>" +
@@ -185,7 +191,7 @@ function tableChange(table) {
     	$("#postInsert").val("");
     	document.getElementById("postShow").innerHTML = " ";
     	return postView();
-    			
+
     }
 }
 function tableUpdate() {

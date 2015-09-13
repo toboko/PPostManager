@@ -2,13 +2,16 @@
 include("../common/config.php");
 
 $id = $_POST['id'];
-$tab = $_POST['table'];
+$tab = tab_check($_POST['table']);
 
-$sql = "SELECT * FROM $tab WHERE id = $id";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
+$query = "SELECT * FROM $tab WHERE id = :id";
+
+$sth = $dbh->prepare($query);
+$sth->bindParam(':id', $id, PDO::PARAM_INT);
+$sth->execute();
+
+$row = $sth->fetch();
+if($row){
 	$post = $row['post'];
 	echo $post;
 }
-?>

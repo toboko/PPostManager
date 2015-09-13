@@ -1,11 +1,15 @@
 <?php
 
-$site = "site.com";
-$vers = "10";
-$base_url = "";
+$site = "Name Website";
+$data =(date("d-m-y"));
 $host = "localhost";
-$db_user = "nicola";
-$db_psw = "nicola";
-$db_name = "mydb";
+$db_user = "root";
+$db_psw = "root";
+$db_name = "YourDB";
 $path_img = glob("../img/*.*");
-$upload_url = "../img/";
+$path_upload = "../img/";
+
+class system {
+  //Setup your own name's table
+  public static $all_tabs = array('news','porto','blog');
+}

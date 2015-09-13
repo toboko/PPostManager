@@ -2,18 +2,28 @@
 include("../common/config.php");
 
 $string = '';
-$tab = $_POST['table'];
+$tab = tab_check($_POST['table']);
 
-$result = $conn->query("SELECT * FROM $tab ORDER BY id DESC");
-if ($result->num_rows > 0) {
-	while ($row = $result->fetch_assoc()) {
+$query = "SELECT * FROM $tab ORDER BY id DESC";
+$sth = $dbh->prepare($query);
+$sth->execute();
+
+$row = $sth->fetch();
+if($row){
+	do {
 		$string .= '
-			<a href="#" class="list-group-item" onclick="postUpdate('.$row['id'].')">
+				<a class="list-group-item" onclick="postUpdate('.$row['id'].')">
 				<h4 class="list-group-item-heading">'.$row['title'].'</h4>
 				<p class="list-group-item-text">'.substr($row['post'], 0, 100).'...</p>
-			</a>';
-	}
+				</a>';
+	} while ($row = $sth->fetch());
 }
-$conn->close();
+else {
+	echo '<a class="list-group-item">
+				<h4 class="list-group-item-heading">No Contents</h4>
+				<p class="list-group-item-text">No contents</p>
+				</a>';
+}
+
 echo $string;
 ?>
